@@ -1,0 +1,35 @@
+<%- include("../partials/header") %>
+<div class="container">
+<header class="jumbotron">
+  <div class="container">
+	  <h1>Wellcome To CampGround</h1>
+<blockquote class="blockquote">
+	  <p>View all Campground all over the world</p>
+	    <footer class="blockquote-footer ">Ramzan <cite title="Source Title">Bhutta</cite>
+	    </footer>
+</blockquote>
+	 <p>
+		<a class="btn btn-outline-primary " href="/campgrounds/new">Add New Camp</a>
+	 </p>
+ </div>
+</header>
+  
+  <div class="row text-center" style="display:flex; flex-wrap:wrap;">
+	<% campgrounds.forEach(function(campground){ %>
+	  <div class="col-md-4 col-sm-6">	  
+	  	 	 <img src="<%= campground.image %>" class="img-thumbnail">
+	  	 	  <div class="caption">
+	  	 	    <h4><%= campground.name %></h4>
+	  	 	  </div>
+	  	 	  <p>
+	  	 	  	<a href="/campgrounds/<%= campground._id%>" class="btn btn-outline-success btn-sm ">More Info</a>
+	  	 	  </p>	 
+	  </div>
+	<% }) %>
+</div>
+</div>
+
+
+
+
+<%- include("../partials/footer") %>

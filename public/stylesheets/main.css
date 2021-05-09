@@ -1,0 +1,15 @@
+.img-thumbnail{
+	padding: 0;
+}
+
+.card .caption-full {
+	padding: 9px;
+}
+
+#deletebtn{
+	display:inline;
+}
+
+#strng{
+	float: right;
+}

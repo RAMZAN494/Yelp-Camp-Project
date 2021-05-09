@@ -1,0 +1,53 @@
+<DOCTYPE html>
+<html>
+<head>
+	<title>Yelp Camp</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+	 <div class="navbar-header">
+	 	<a class="navbar-brand" style="color:white;" href="/">Camp Ground</a>
+	 </div>
+		
+		<button class="navbar-toggler" data-toggle="collapse" data-target="#link">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+	<div class="collapse navbar-collapse" id="link">
+		<ul class="navbar-nav ml-auto">
+			<% if(!currentUser){ %>
+			<li class="nav-item">
+				<a href="/login" class="nav-link" href="/">Log In</a>
+			</li>
+			<li class="nav-item">
+				<a href="/register" class="nav-link" href="/">Sign Up</a>
+			</li>
+	<%	} else { %>
+				<li class="nav-item">
+					<a class="nav-link">Signed In As <%= currentUser.username %></a>
+				</li>
+			<li class="nav-item">
+				<a href="/logout" class="nav-link" href="/" >Log Out</a>
+			</li>
+	<% } %>
+		</ul>
+	</div>
+</nav>
+ <div class="container pt-3">
+ <%	if(error && error.length > 0){ %>
+	 	<div class="alert alert-danger" role="alert">
+	       <%= error %>
+	    </div>
+   <% } %>
+ 	
+     <%	if(success && success.length > 0){ %>
+	 	<div class="alert alert-success" role="alert">
+	       <%= success %>
+	    </div>
+   <% } %>
+ 	 </div>
+
+
